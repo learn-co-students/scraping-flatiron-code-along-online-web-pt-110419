@@ -1,9 +1,20 @@
 require 'nokogiri'
 require 'open-uri'
+require 'pry'
 
 require_relative './course.rb'
 
 class Scraper
+  
+  def get_page
+    doc = Nokogiri::HTML(open("http://learn-co-curriculum.github.io/site-for-scraping/courses"))
+    
+      binding.pry
+    end
+    
+  end
+  
+  Scraper.new.get_page
   
   def print_courses
     self.make_courses
@@ -18,5 +29,5 @@ class Scraper
   
 end
 
-
+<article class="post same-height-left" style="height: 458px;"> <img src="http://flatiron-web-assets.s3.amazonaws.com/images/courses/web_app.png"> <h2>Web Development Immersive</h2> <em class="date">Full-Time</em> <p>An intensive, Ruby and Javascript course that teaches the skills necessary to start a career as a full-stack software developer.</p> <div class="button-centering-container"> <a href="/web" class="btn-more">Learn More</a> </div> </article>
 
